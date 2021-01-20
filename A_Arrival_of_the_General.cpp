@@ -14,12 +14,14 @@ using namespace std;
 
 int main() {
   FASTIO
-  int n, k;
-  cin >> n >> k;
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) cout << (i == j ? k : 0) << " ";
-    cout << endl;
-  }
+
+  int t;
+  cin >> t;
+  vector<int> A(t);
+  for (int &i : A) cin >> i;
+  int m = max_element(all(A)) - A.begin();
+  int mi = min_element(A.rbegin(), A.rend()) - A.rbegin();
+  cout << (m + mi + (m >= t - mi - 1 ? -1 : 0));
 
   return 0;
 }

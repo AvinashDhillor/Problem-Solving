@@ -14,12 +14,18 @@ using namespace std;
 
 int main() {
   FASTIO
-  int n, k;
-  cin >> n >> k;
+
+  int n, x;
+  cin >> n >> x;
+  int sum = 0;
   for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) cout << (i == j ? k : 0) << " ";
-    cout << endl;
+    int n;
+    cin >> n;
+    sum += n;
   }
+  sum = abs(sum);
+  int sol = (sum / x) + (sum % x == 0 ? 0 : 1);
+  cout << sol;
 
   return 0;
 }

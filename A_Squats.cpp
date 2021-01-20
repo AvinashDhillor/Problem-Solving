@@ -14,12 +14,21 @@ using namespace std;
 
 int main() {
   FASTIO
-  int n, k;
-  cin >> n >> k;
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) cout << (i == j ? k : 0) << " ";
-    cout << endl;
+
+  int t, cnt = 0;
+  string s;
+  cin >> t >> s;
+
+  int x = count(all(s), 'x'), X = t - x;
+  cnt = abs(x - X) / 2;
+  cout << cnt << endl;
+
+  while (cnt-- != 0) {
+    int index = find(all(s), x > X ? 'x' : 'X') - s.begin();
+    s.replace(index, 1, (x > X ? "X" : "x"));
   }
+
+  cout << s;
 
   return 0;
 }

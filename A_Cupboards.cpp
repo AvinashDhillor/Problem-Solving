@@ -7,13 +7,24 @@ using namespace std;
 #define all(v) (v).begin(), (v).end()
 #define allr(v) (v).rbegin(), (v).rend()
 
-#define FASTIO                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(NULL);               \
-    cout.tie(NULL);
+#define FASTIO                 \
+  ios::sync_with_stdio(false); \
+  cin.tie(NULL);               \
+  cout.tie(NULL);
 
 int main() {
-    FASTIO
+  FASTIO
 
-    return 0;
+  int t, x, y, l_zero = 0, r_zero = 0;
+  cin >> t;
+  for (int i = 0; i < t; i++) {
+    cin >> x >> y;
+    if (x == 0) l_zero++;
+    if (y == 0) r_zero++;
+  }
+  int sol = min(l_zero, t - l_zero);
+  sol += min(r_zero, t - r_zero);
+  cout << sol << endl;
+
+  return 0;
 }
