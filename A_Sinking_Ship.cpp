@@ -30,10 +30,11 @@ int main() {
     else if (y == "captain")
       forth.push_back(x);
   }
+  auto p = [](auto &a) {
+    for (string s : a) cout << s << endl;
+  };
 
-  for (string s : first) cout << s << endl;
-  for (string s : second) cout << s << endl;
-  for (string s : third) cout << s << endl;
-  for (string s : forth) cout << s << endl;
+  p(first), p(second), p(third), p(forth);
+
   return 0;
 }
