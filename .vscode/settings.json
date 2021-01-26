@@ -12,6 +12,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "cmath": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "random": "cpp"
     }
 }
