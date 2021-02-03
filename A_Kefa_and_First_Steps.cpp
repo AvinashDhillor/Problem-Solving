@@ -14,12 +14,18 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
+
+  int mLen = 1, tmp = 1, n;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
+  vector<int> A(n);
+  for (int &i : A) cin >> i;
+  for (int i = 1; i < n; i++) {
+    if (A[i] < A[i - 1]) {
+      tmp = 1;
+      continue;
+    }
+    mLen = max(++tmp, mLen);
   }
-  cout << min(i1, i2);
+  cout << mLen;
   return 0;
 }

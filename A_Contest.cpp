@@ -14,12 +14,16 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
-  cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
-  }
-  cout << min(i1, i2);
+
+  int p1, p2, t1, t2;
+  cin >> p1 >> p2 >> t1 >> t2;
+
+  auto _s = [](int p, int t) { return max((3 * p) / 10, p - (p / 250) * t); };
+  int s1 = _s(p1, t1), s2 = _s(p2, t2);
+  if (s1 == s2)
+    cout << "Tie";
+  else
+    cout << (s1 > s2 ? "Misha" : "Vasya");
+
   return 0;
 }

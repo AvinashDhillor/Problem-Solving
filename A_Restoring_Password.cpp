@@ -14,12 +14,19 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
-  cin >> n;
-  for (int i = 1; i <= n; i++) {
+
+  vector<string> A(8, "");
+  string s, k;
+  cin >> s;
+  for (int i = 0; i < 8; i++) A[i] = s.substr(i * 10, 10);
+
+  map<string, int> B;
+  for (int i = 0; i < 10; i++) {
     cin >> k;
-    k& 1 ? i1 += i : i2 += i;
+    B[k] = i;
   }
-  cout << min(i1, i2);
+
+  for (string s : A) cout << B[s];
+
   return 0;
 }

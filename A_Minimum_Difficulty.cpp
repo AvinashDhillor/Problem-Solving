@@ -14,12 +14,22 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
+
+  int n, k;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
+  vector<int> A(n), B;
+  for (int &i : A) cin >> i;
+  int mn = INT_MIN;
+  for (int i = 1; i < n; i++) {
+    k = A[i] - A[i - 1];
+    mn = max(mn, k);
+    B.push_back(k);
   }
-  cout << min(i1, i2);
+
+  int sum = B[0] + B[1];
+  for (int i = 2; i < B.size(); i++) sum = min(B[i - 1] + B[i], sum);
+
+  cout << max(mn, sum);
+
   return 0;
 }

@@ -14,12 +14,11 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
+
+  int n, k = 1;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
-  }
-  cout << min(i1, i2);
+  cout << n << " ";
+  while (k <= n - 1) cout << k++ << " ";
+
   return 0;
 }

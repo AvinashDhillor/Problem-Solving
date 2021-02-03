@@ -14,12 +14,17 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
+
+  int n;
+  char c;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
+  map<char, int> A;
+  for (int i = 0; i < 16; i++) {
+    cin >> c;
+    if (c != '.') A[c]++;
+    if (A[c] > n * 2) return cout << "NO", 0;
   }
-  cout << min(i1, i2);
+
+  cout << "YES";
   return 0;
 }

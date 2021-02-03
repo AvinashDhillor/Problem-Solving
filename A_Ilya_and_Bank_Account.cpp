@@ -14,12 +14,11 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
+
+  int n;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
-  }
-  cout << min(i1, i2);
+  int first = n / 10, second = (n / 100) * 10 + n % 10;
+  cout << max({first, second, n});
+
   return 0;
 }

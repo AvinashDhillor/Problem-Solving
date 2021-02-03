@@ -14,12 +14,18 @@ using namespace std;
 
 int main() {
   FASTIO
-  int i1 = 0, i2 = 0, n, k;
-  cin >> n;
-  for (int i = 1; i <= n; i++) {
-    cin >> k;
-    k& 1 ? i1 += i : i2 += i;
-  }
-  cout << min(i1, i2);
+
+  string a, b, c, d = "aeiou";
+  getline(cin, a);
+  getline(cin, b);
+  getline(cin, c);
+
+  auto _V = [&](string s) {
+    int ct = 0;
+    for (auto c : s) d.find(c) != string::npos && ++ct;
+    return ct;
+  };
+  cout << (_V(a) == _V(c) == 5 and _V(b) == 7 ? "YES " : "NO");
+
   return 0;
 }
