@@ -14,18 +14,23 @@ using namespace std;
 
 int main() {
   FASTIO
+
+  int n, k;
+  cin >> n >> k;
   string s;
   cin >> s;
-  string abc = "hello";
 
-  bool f = true;
-  for (int i = 0, ind = 0; i < 5; i++) {
-    int tmp = find(s.begin() + ind, s.end(), abc[i]) - s.begin();
-    if (tmp == s.size()) f = false;
-    ind = tmp + 1;
-  }
+  int g = find(all(s), 'G') - s.begin();
+  int t = find(all(s), 'T') - s.begin();
 
-  cout << (f ? "YES" : "NO");
+  if (g > t) swap(s[g], s[t]);
 
+  for (int i = min(g, t); i < n; i += k)
+    if (s[i] == 'T')
+      return cout << "YES", 0;
+    else if (s[i] == '#')
+      return cout << "NO", 0;
+
+  cout << "NO";
   return 0;
 }

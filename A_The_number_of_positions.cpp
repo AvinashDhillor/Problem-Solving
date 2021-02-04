@@ -14,18 +14,12 @@ using namespace std;
 
 int main() {
   FASTIO
-  string s;
-  cin >> s;
-  string abc = "hello";
 
-  bool f = true;
-  for (int i = 0, ind = 0; i < 5; i++) {
-    int tmp = find(s.begin() + ind, s.end(), abc[i]) - s.begin();
-    if (tmp == s.size()) f = false;
-    ind = tmp + 1;
-  }
-
-  cout << (f ? "YES" : "NO");
+  int n, a, b, s = 0;
+  cin >> n >> a >> b;
+  for (int i = 1; i <= n; i++)
+    if (i - 1 >= a && n - i <= b) s++;
+  cout << s;
 
   return 0;
 }
