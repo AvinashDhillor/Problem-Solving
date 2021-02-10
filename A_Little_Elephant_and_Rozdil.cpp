@@ -15,19 +15,20 @@ using namespace std;
 int main() {
   FASTIO
 
-  int n, m;
-  cin >> n >> m;
-  int a[n][m];
-  for (int i = 0; i < n; i++)
-    for (int j = 0; j < m; j++) cin >> a[i][j];
+  int n;
+  cin >> n;
+  vector<pair<int, int>> A(n);
+  for (int i = 0; i < n; i++) {
+    cin >> A[i].first;
+    A[i].second = i;
+  }
 
-  bool f = 0;
-  for (int i = 0; i < m; i++)
-    if (a[0][i] == 1 || a[n - 1][i] == 1) f = 1;
+  sort(all(A));
 
-  for (int i = 0; i < n; i++)
-    if (a[i][0] == 1 || a[i][m - 1] == 1) f = 1;
+  if (A[0].first != A[1].first)
+    cout << A[0].second + 1;
+  else
+    cout << "Still Rozdil";
 
-  cout << (f ? 2 : 4);
   return 0;
 }

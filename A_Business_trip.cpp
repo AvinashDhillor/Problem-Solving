@@ -15,19 +15,18 @@ using namespace std;
 int main() {
   FASTIO
 
-  int n, m;
-  cin >> n >> m;
-  int a[n][m];
-  for (int i = 0; i < n; i++)
-    for (int j = 0; j < m; j++) cin >> a[i][j];
+  int n;
+  cin >> n;
+  if (n == 0) return cout << 0, 0;
+  vector<int> A(12);
+  for (int &i : A) cin >> i;
+  sort(all(A));
+  int sum = 0;
+  for (int i = 11; i >= 0; i--) {
+    sum += A[i];
+    if (sum >= n) return cout << 12 - i, 0;
+  }
+  cout << -1;
 
-  bool f = 0;
-  for (int i = 0; i < m; i++)
-    if (a[0][i] == 1 || a[n - 1][i] == 1) f = 1;
-
-  for (int i = 0; i < n; i++)
-    if (a[i][0] == 1 || a[i][m - 1] == 1) f = 1;
-
-  cout << (f ? 2 : 4);
   return 0;
 }
