@@ -15,5 +15,17 @@ using namespace std;
 int main() {
     FASTIO
 
+    int a, b;
+    cin >> a >> b;
+    int count = 0; 
+    if(a < 2 && b < 2) return cout << 0, 0;
+    while(a != 0 && b != 0) {
+        int tmp = a;
+        a = max(a, b) - 2;
+        b = min(tmp, b) + 1;
+        count++;
+    }
+
+    cout << count;
     return 0;
 }
