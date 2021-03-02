@@ -17,7 +17,6 @@ int main() {
 
   int x, y, z;
   cin >> x >> y >> z;
-
   int a = sqrt((z * x) / y);
   int c = (y * a) / x;
   int b = x / a;
