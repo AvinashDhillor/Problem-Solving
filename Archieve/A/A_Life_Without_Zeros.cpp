@@ -15,16 +15,17 @@ using namespace std;
 int main() {
   FASTIO
 
-  int n;
-  cin >> n;
-  // cin >> n;
-  // vector<int> A(n);
-  // for (int &i : A) cin >> i;
+  ll a, b;
+  cin >> a >> b;
+  ll sum = a + b;
 
-  // sort(all(A));
-  for (int i = 0; i <= n; i++) {
-    cout << i << " ";
-  }
+  auto p = [](ll num) {
+    string k = to_string(num);
+    k.erase(remove(all(k), '0'), k.end());
+    return stoll(k);
+  };
+
+  cout << (p(a) + p(b) == p(sum) ? "YES" : "NO");
 
   return 0;
 }

@@ -14,6 +14,11 @@
         "cmath": "cpp",
         "complex": "cpp",
         "random": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "algorithm": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "vector": "cpp",
+        "xiosbase": "cpp"
     }
 }
