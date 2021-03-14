@@ -15,21 +15,20 @@ using namespace std;
 int main() {
   FASTIO
 
-  int n, sol = 0, prev = 0, energy = 0;
+  string n;
   cin >> n;
-  vector<int> A(n);
-  for (int &i : A) cin >> i;
+  int num = 0;
+  while (n.size() != 1) {
+    map<int, int> A;
+    for (char c : n) A[c - '0']++;
 
-  for (int i = 0; i < n; i++) {
-    energy += prev - A[i];
-    if (energy < 0) {
-      sol += abs(energy);
-      energy = 0;
-    }
-    prev = A[i];
+    long long sum = 0;
+    for (auto it : A) sum += it.first * it.second;
+
+    n = to_string(sum);
+    num++;
   }
-
-  cout << sol;
+  cout << num;
 
   return 0;
 }
