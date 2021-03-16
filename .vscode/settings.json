@@ -21,6 +21,7 @@
         "vector": "cpp",
         "xiosbase": "cpp",
         "chrono": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "iosfwd": "cpp"
     }
 }

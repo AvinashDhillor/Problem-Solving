@@ -19,12 +19,8 @@ int main() {
   cin >> n;
   int num = 0;
   while (n.size() != 1) {
-    map<int, int> A;
-    for (char c : n) A[c - '0']++;
-
     long long sum = 0;
-    for (auto it : A) sum += it.first * it.second;
-
+    for (char c : n) sum += c - '0';
     n = to_string(sum);
     num++;
   }

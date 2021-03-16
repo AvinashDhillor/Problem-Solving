@@ -22,10 +22,7 @@ int main() {
 
   for (int i = 0; i < n; i++) {
     energy += prev - A[i];
-    if (energy < 0) {
-      sol += abs(energy);
-      energy = 0;
-    }
+    if (energy < 0) sol += abs(energy), energy = 0;
     prev = A[i];
   }
 
