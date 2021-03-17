@@ -18,15 +18,15 @@ int main() {
     int n, i;
     cin >> n;
 
-    string one = "VIBG";
-    string two = "ROYG";
+    string one = "VIBGYOR";
+    string two = "GYORGYOR";
 
-    int d = n / 4;
+    int d = n / 7;
     for (i = 0; i < d; i++)
-        cout << (i & 1 ? two : one);
+        cout << one;
 
-    for (int k = 0; k < n % 4; k++) {
-        cout << (i & 1 ? two[k] : one[k]);
+    for (int k = 0; k < n % 7; k++) {
+        cout << two[k];
     }
 
     return 0;
