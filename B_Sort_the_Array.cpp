@@ -26,9 +26,8 @@ int main() {
         if (A[i] - A[i + 1] > 0 && f == 0)
             x = i,
             f = 1;
-        else if (f == 1 && A[i] - A[i + 1] < 0)
-            y = i + 1,
-            f = 2;
+        else if (f == 1 && A[i] - A[i + 1] < 0 && i + 1 == (y = i + 1))
+            break;
 
     reverse(A.begin() + x, A.begin() + y);
 
