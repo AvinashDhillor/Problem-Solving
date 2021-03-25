@@ -22,6 +22,8 @@
         "xiosbase": "cpp",
         "chrono": "cpp",
         "xutility": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "deque": "cpp",
+        "string": "cpp"
     }
 }
