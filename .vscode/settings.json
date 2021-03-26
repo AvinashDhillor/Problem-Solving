@@ -24,6 +24,7 @@
         "xutility": "cpp",
         "iosfwd": "cpp",
         "deque": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "list": "cpp"
     }
 }
