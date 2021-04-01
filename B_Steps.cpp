@@ -32,7 +32,7 @@ int way(int s, int t) {
     else if (s == 0) {
         y += t * b;
     } else if (t == 0) {
-        x += x * a;
+        x += s * a;
     }
     return min(a, b);
 }
