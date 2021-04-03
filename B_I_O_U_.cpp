@@ -14,20 +14,25 @@ using namespace std;
 
 int main() {
     FASTIO
+
     int n, k;
     cin >> n >> k;
-    vector<int> A(n + 1, 0);
-    for (int i = 0; i < k; i++) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        if (i == 0) {
-            A[b] += c;
-        } else {
-            A[a] -= c;
-            A[b] += c;
+    long sum = 0, orig = 0;
+    vector<pair<int, int>> A(n + 1, {0, 0});
+    while (k--) {
+        int x, y, z;
+        cin >> x >> y >> z;
+        orig += z;
+        A[x].second -= z;
+        A[y].first += z;
+    }
+
+    for (int i = 1; i <= n; i++) {
+        if (A[i].first != 0) {
+            sum += min(A[i].first, abs(A[i].second));
         }
     }
 
-    cout << accumulate(all(A), 0);
+    cout << orig - sum;
     return 0;
 }
