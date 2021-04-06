@@ -6,38 +6,45 @@ using namespace std;
 #define ll long long
 #define all(v) (v).begin(), (v).end()
 #define allr(v) (v).rbegin(), (v).rend()
+#define pii pair<int, int>
+#define INF 1000000000
 
 #define FASTIO                   \
     ios::sync_with_stdio(false); \
     cin.tie(NULL);               \
     cout.tie(NULL);
 
+int n, m;
+
+int BFS() {
+    queue<int> q;
+    vector<int> dist(20001, -1);
+    q.push(n);
+    dist[n] = 0;
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        if (u == m) {
+            return dist[u];
+        }
+        int a = u * 2;
+        if (a <= 20000 && dist[a] == -1) {
+            q.push(a);
+            dist[a] = dist[u] + 1;
+        }
+        int b = u - 1;
+        if (b > 0 && dist[b] == -1) {
+            q.push(b);
+            dist[b] = dist[u] + 1;
+        }
+    }
+    return -1;
+}
+
 int main() {
     FASTIO
 
-    int n, m;
     cin >> n >> m;
-    int sol = INT_MAX;
-    if (m <= n)
-        return cout << n - m, 0;
-    else {
-        for (int i = 1; i <= n; i++) {
-            int moves = 0;
-            double lp = m / i;
-            int p = ceil(log(lp) / log(2.0));
-            moves += n - i;
-            int ab = i * pow(2, p);
-            if (ab < m) {
-                ab *= 2;
-            }
-
-            moves += p;
-            moves += ab - m;
-            sol = min(sol, moves);
-        }
-    }
-
-    cout << sol;
-
+    cout << BFS();
     return 0;
 }
