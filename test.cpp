@@ -15,21 +15,7 @@ int main() {
     cin.tie(0);
     cout.tie(0);
 
-    int n, m;
-    cin >> n >> m;
-    vector<vector<int>> A(n + 1, vector<int>(n + 1, 0));
-    while (m--) {
-        int u, v;
-        cin >> u >> v;
-        A[u][v] = 1;
-    }
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << A[i][j] << ", ";
-        }
-        cout << endl;
-    }
+    cout << "hello";
 
     return 0;
 }
