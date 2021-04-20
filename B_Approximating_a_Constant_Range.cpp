@@ -17,43 +17,29 @@ int main() {
 
     int n;
     cin >> n;
-    vector<pair<int, int>> A;
+    vector<int> A(n);
+    for(int &i : A) cin >> i;
 
-    for(int i = 0; i < n; i++) {
-        int r;
-        cin >> r;
-        if(!A.empty() && A.rbegin()->first == r)
-            A.rbegin()->second++;
-        else
-            A.push_back({r, 1});
+    int prev = -1, next = 0, current = A[0], currentCount = 1, prevCount =0, len =1;
+    for(int i = 1; i < n; i++)  {
+        next = A[i];
+        if(next == current) currentCount++;
+        else if(next == prev) {
+           prevCount += currentCount;
+           prev = current;
+           current  = next;
+           currentCount = 1;
+        } else {
+            len = max(len, currentCount+ prevCount);
+            prevCount = currentCount;
+           prev = current;
+           current  = next;
+           currentCount = 1;
+        }
     }
 
-    int range = INT_MIN;
-    for(int i = 0; i < A.size(); i++) {
-        int mn = A[i].first, mx = A[i].first;
-        int k = i - 1, m = i + 1;
-        int count = A[i].second;
-        while(k >= 0) {
-            mn = min(mn, A[k].first);
-            mx = max(mx, A[k].first);
-            if(mx - mn > 1)  {
-                break;
-            }
-            count += A[k].second;
-            k--;
-        }
-        while(m < n) {
-            mn = min(mn, A[m].first);
-            mx = max(mx, A[m].first);
-            if(mx - mn > 1)  {
-                break;
-            }
-            count += A[m].second;
-            m++;
-        }
-        range = max(count, range);
+    cout << max(len , currentCount + prevCount);
 
-    }
-    cout << range;
+
     return 0;
 }
