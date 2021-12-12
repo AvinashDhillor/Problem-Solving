@@ -29,5 +29,8 @@
         "forward_list": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
 }

@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ShorestPath",
+            "request": "launch",
+            "mainClass": "ShorestPath",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch Percolation",
+            "request": "launch",
+            "mainClass": "Percolation",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch UF",
+            "request": "launch",
+            "mainClass": "UF",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "Test",
