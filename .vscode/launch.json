@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ShortestPath",
+            "request": "launch",
+            "mainClass": "ShortestPath",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch GCD",
+            "request": "launch",
+            "mainClass": "GCD",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch UpperBound",
+            "request": "launch",
+            "mainClass": "UpperBound",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch StoneGame",
+            "request": "launch",
+            "mainClass": "StoneGame",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
             "name": "Launch ShorestPath",
             "request": "launch",
             "mainClass": "ShorestPath",
