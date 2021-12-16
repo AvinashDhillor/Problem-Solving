@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NextPermutation",
+            "request": "launch",
+            "mainClass": "NextPermutation",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
             "name": "Launch TargetSum",
             "request": "launch",
             "mainClass": "TargetSum",
