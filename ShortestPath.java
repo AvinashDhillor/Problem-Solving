@@ -1,26 +1,25 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-class Pair implements Comparator<Pair> {
+// class Pair implements Comparator<Pair> {
 
-    int v, w;
+//     int v, w;
 
-    public Pair() {
-    }
+//     public Pair() {
+//     }
 
-    public Pair(int v, int w) {
-        this.v = v;
-        this.w = w;
-    }
+//     public Pair(int v, int w) {
+//         this.v = v;
+//         this.w = w;
+//     }
 
-    @Override
-    public int compare(Pair o1, Pair o2) {
-        return o1.w - o2.w;
-    }
+//     @Override
+//     public int compare(Pair o1, Pair o2) {
+//         return o1.w - o2.w;
+//     }
 
-}
+// }
 
 public class ShortestPath {
     public static void main(String[] args) {
