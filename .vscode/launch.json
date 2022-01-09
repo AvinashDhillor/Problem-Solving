@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch AllPossible",
+            "request": "launch",
+            "mainClass": "AllPossible",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch Re",
+            "request": "launch",
+            "mainClass": "Re",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoDigit",
+            "request": "launch",
+            "mainClass": "TwoDigit",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch BFS",
+            "request": "launch",
+            "mainClass": "BFS",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
+            "name": "Launch finb",
+            "request": "launch",
+            "mainClass": "finb",
+            "projectName": "Problem-Solving_beaa7eea"
+        },
+        {
+            "type": "java",
             "name": "Launch Recur",
             "request": "launch",
             "mainClass": "Recur",

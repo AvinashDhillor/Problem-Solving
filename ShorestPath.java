@@ -22,7 +22,7 @@ class Pair implements Comparator<Pair> {
     }
 }
 
-public class ShorestPath {
+class Main{
 
     static void shortestPath(List<List<Pair>> adj, int src) {
         int dist[] = new int[adj.size()];
@@ -98,18 +98,19 @@ public class ShorestPath {
     }
 
     public static void main(String[] args) {
-        // List<List<Pair>> list = new ArrayList<>();
-        // for (int i = 0; i < 10; i++)
-        // list.add(new ArrayList<>());
+        List<List<Pair>> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++)
+            list.add(new ArrayList<>());
 
-        // list.get(1).add(new Pair(2, 1));
-        // list.get(2).add(new Pair(3, 1));
-        // list.get(2).add(new Pair(5, 1));
-        // list.get(3).add(new Pair(6, 1));
-        // list.get(1).add(new Pair(7, 1));
+         list.get(1).add(new Pair(2, 1));
+         list.get(2).add(new Pair(3, 1));
+         list.get(2).add(new Pair(5, 1));
+         list.get(3).add(new Pair(6, 1));
+         list.get(1).add(new Pair(7, 1));
 
-        // shortestPath(list, 1);
+         shortestPath(list, 1);
 
+        /*
         Pair[] p = new Pair[10];
         for (int i = 0; i < p.length; i++) {
             p[i] = new Pair(Integer.valueOf((int) (Math.random() * 10)), 1);
@@ -117,6 +118,6 @@ public class ShorestPath {
 
         Arrays.sort(p);
 
-        System.out.println(p.toString());
+        System.out.println(p.toString()); */
     }
 }
