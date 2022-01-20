@@ -1,0 +1,86 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    final static int mod = (int) (1e9 + 7.0);
+
+    static class Tree {
+        private class Node {
+            int value;
+            Node left, right;
+
+            Node (int value) {
+                this.value = value;
+            }
+        }
+    
+        private Node root; 
+
+        public void insert(int value) {
+            Node tmp = root;
+            root = insertUtil(tmp, value);
+        }
+
+        // Method 1
+        public void lca(Node a, Node b) {
+            
+        }
+        
+        private void distance(Node root, Map<Integer, Integer> dist , int height) {
+            if(root == null) return ;
+            dist.put(root.value, height); 
+            distance(root.left,dist,  height + 1);
+            distance(root.right, dist, height + 1);
+        }
+
+        public Node insertUtil(Node root, int value) {
+            if(root == null) return new Node(value); 
+            if(root.value > value) {
+                root.left = insertUtil(root.left, value);    
+            } else if (root.value < value) {
+                root.right = insertUtil(root.right, value);
+            }
+            return root;
+        }
+
+        public void inOrder() {
+            Node tmp = root;
+            inOrderUtil(tmp);
+        }
+
+        private void inOrderUtil(Node root) {
+            if(root == null) return;
+            inOrderUtil(root.left);
+            print(root.value + " ");
+            inOrderUtil(root.right);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+
+        int[] arr = new int[10];
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = (int)(  Math.random() *  50);
+        }
+
+        for(int i :  arr) print(i + " ");
+
+        print("\n Tree Start\n");
+
+        Tree tree  = new Tree();
+        for(int i : arr) tree.insert(i);
+
+        tree.inOrder();
+
+        sc.close(); 
+    }
+
+    static void print(Object s) {
+        System.out.print(s);
+    } 
+}
+
