@@ -5,15 +5,18 @@ import java.io.*;
 
 class Main {
     final static int mod = (int) (1e9 + 7.0);
+    final static String endl = "\n";
+    static double startTime, endTime;
     static Scanner sc = null;
     static StringBuilder sb = null;
     
 
+    static int db(int n) {
+        
+    }
+
     static void solution() {
         // solution code
-
-
-
     }
 
     public static void main(String[] args) {
@@ -29,7 +32,21 @@ class Main {
     static void print(Object s) {
         System.out.print(s);
     } 
+    
+    static void start() {
+        startTime = System.nanoTime();
+    }
 
+    static void end() {
+        endTime = System.nanoTime();
+        timeDiff();
+    }
+
+    static void timeDiff() {
+        double divideby = 1e9;
+        double diff = (endTime - startTime)/divideby;
+        print("\nTime Taken : " + diff + " sec\n");
+    }
 }
 
 class Pair implements Comparator<Pair>, Comparable<Pair> {
@@ -55,3 +72,4 @@ class Pair implements Comparator<Pair>, Comparable<Pair> {
         return "["+first+", "+second+"]";
     }
 }
+

@@ -5,7 +5,7 @@ import java.io.*;
 class Main {
     final static int mod = (int) (1e9 + 7.0);
     final static String endl = "\n";
-
+    
     static class Tree {
         private class Node {
             int value;
@@ -65,7 +65,6 @@ class Main {
             print(root.value + " ");
             inOrderUtil(root.right);
         }
-
     }
 
     public static void main(String[] args) {
@@ -90,6 +89,5 @@ class Main {
     static void print(Object s) {
         System.out.print(s);
     } 
-
 }
 
