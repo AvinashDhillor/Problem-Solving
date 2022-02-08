@@ -8,26 +8,24 @@ class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
-        
-        int[] arr = new int[]{10, 32, 45, 22, 52};
+
+        int[] arr = new int[] { 10, 32, 45, 22, 52 };
 
         PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
 
-        for(int i : arr) {
+        for (int i : arr) {
             pq.add(i);
         }
-        
-        while(!pq.isEmpty()) {
+
+        while (!pq.isEmpty()) {
             print(pq.peek() + "\n");
             pq.poll();
         }
 
-
-        sc.close(); 
+        sc.close();
     }
 
     static void print(Object s) {
         System.out.print(s);
-    } 
+    }
 }
-
