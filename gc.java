@@ -4,7 +4,7 @@ import java.io.*;
 
 class Main {
     
-   static Scanner sc = null;
+    static Scanner sc = null;
   
     static long gcd(long a, long b) {
         if(a == 0L) return b;
@@ -32,4 +32,8 @@ class Main {
     static void print(Object s) {
         System.out.print(s);
     } 
+
+    static void lower_bound(int[] a, int key) {
+        
+    }
 }
