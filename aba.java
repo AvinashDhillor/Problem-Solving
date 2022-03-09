@@ -3,7 +3,7 @@ import java.lang.*;
 import java.io.*;
 
 
-public class Test {
+class Main {
     final static int mod = (int) (1e9 + 7.0);
     final static String endl = "\n";
     static double startTime, endTime;
@@ -12,9 +12,20 @@ public class Test {
     
 
     static void solution() throws Exception {
-        print("Hello world");
-        int a = 100000;
-        int b = 24234;
+         int[] a = {34, 67, 89, 67, 34, 34, 98, 33, 18, 90, 56, 11, 34, 33};
+
+         Arrays.sort(a);
+    
+         Map<Integer, Integer> map  = new TreeMap<>();
+
+         for(int i : a) {
+             map.put(i, map.getOrDefault(i, 0) + 1);
+         }
+
+         for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+             print(entry.getKey() + " "  + entry.getValue() + endl);
+         }
+
     }
 
     public static void main(String[] args) throws Exception {

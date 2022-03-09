@@ -3,7 +3,7 @@ import java.lang.*;
 import java.io.*;
 
 
-public class Test {
+public class Dfs {
     final static int mod = (int) (1e9 + 7.0);
     final static String endl = "\n";
     static double startTime, endTime;
@@ -12,9 +12,12 @@ public class Test {
     
 
     static void solution() throws Exception {
-        print("Hello world");
-        int a = 100000;
-        int b = 24234;
+        List<Integer> list = new ArrayList<>(Collections.nCopies(3, 10)); 
+        list.set(1, 13);
+        list.add(3, 14);
+        for(int i : list) {
+            print(i + " ");
+        }
     }
 
     public static void main(String[] args) throws Exception {
