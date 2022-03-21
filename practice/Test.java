@@ -9,22 +9,7 @@ public class Test {
     static StringBuilder sb = null;
 
     static void solution() throws Exception {
-        Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<>();
-        list.add(14);
-        list.add(24);
-        list.add(3233);
-        list.add(14);
-        set.addAll(list);
-
-        set.add(10);
-
-        TreeMap<Integer, Integer> map = new TreeMap<>();
-
-        map.put(5, 5);
-        map.put(6, 6);
-        map.put(4, 4);
-        print(map.toString());
+        print("Hello world");
     }
 
     public static void main(String[] args) throws Exception {
