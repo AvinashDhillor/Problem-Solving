@@ -54,16 +54,82 @@ public class BinarySearchTree {
             print(root.val + endl);
             inOrderUtil(root.right);
         }
+
+        private int findInorderSucc(Node root) {
+            int val = root.val;
+            while (root.left != null) {
+                val = root.left.val;
+                root = root.left;
+            }
+            return val;
+        }
+
+        public Node deleteNode(int key) {
+            return head = deleteNode(head, key);
+        }
+
+        private Node deleteNode(Node root, int key) {
+            if (root == null)
+                return null;
+
+            if (root.val < key) {
+                root.right = deleteNode(root.right, key);
+            } else if (root.val > key) {
+                root.left = deleteNode(root.left, key);
+            } else {
+                if (root.right == null) {
+                    return root.left;
+                }
+                if (root.left == null) {
+                    return root.right;
+                }
+
+                int nextInorderSuccessor = findInorderSucc(root.right);
+                root.val = nextInorderSuccessor;
+                root.right = deleteNode(root.right, nextInorderSuccessor);
+            }
+
+            return root;
+        }
+
+        public int distanceBetweenNodes(int p, int q) {
+            return distanceBetweenNodes(head, p, q);
+        }
+
+        private int distancefromroot(Node root, int key) {
+            if (root.val == key)
+                return 0;
+            if (root.val < key)
+                return 1 + distancefromroot(root.right, key);
+            return 1 + distancefromroot(root.left, key);
+        }
+
+        private int distanceBetweenNodes(Node root, int p, int q) {
+            if (root == null)
+                return 0;
+
+            if (root.val > p && root.val > q) {
+                return distanceBetweenNodes(root.left, p, q);
+            }
+            if (root.val < p && root.val < q) {
+                return distanceBetweenNodes(root.right, p, q);
+            }
+            if (root.val >= p && root.val <= q) {
+                return distancefromroot(root, p) + distancefromroot(root, q);
+            }
+            return 0;
+        }
     }
 
     static void solution() throws Exception {
         Tree tree = new Tree();
-        tree.add(10);
-        tree.add(35);
-        tree.add(42);
-        tree.add(232);
-        tree.add(1);
-        tree.inOrder();
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            tree.add(sc.nextInt());
+        }
+
+        // tree.inOrder();
+        print(tree.distanceBetweenNodes(5, 12));
     }
 
     public static void main(String[] args) throws Exception {
