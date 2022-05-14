@@ -36,14 +36,6 @@ public class Samsung {
         return 0;
     }
 
-    private static void countHappyTree(TreeNode root, int lvl) {
-
-    }
-
-    public static void countHappyTrees(TreeNode root) {
-
-    }
-
     public static void display(TreeNode root) {
 
         if (root == null)

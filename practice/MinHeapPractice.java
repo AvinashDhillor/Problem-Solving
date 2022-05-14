@@ -1,4 +1,3 @@
-import java.util.HexFormat;
 
 public class MinHeapPractice {
     private int[] heap;
