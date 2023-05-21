@@ -1,13 +1,7 @@
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 public class ZipService {
@@ -20,7 +14,6 @@ public class ZipService {
 
     private static void storeIntoZipFile(List<String> list) {
         try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             // ZipOutputStream zipOutputStream = new ZipOutputStream(byteArrayOutputStream);
             ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream("b.zip"));
             for (String i : list) {
@@ -51,29 +44,6 @@ public class ZipService {
 
             // decodeData(data);
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private static void decodeData(String data) {
-        byte[] decodedData = Base64.getDecoder().decode(data);
-
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(decodedData);
-
-        ZipInputStream zipInputStream = new ZipInputStream(byteArrayInputStream);
-
-        ZipEntry zipEntry;
-        try {
-            zipEntry = zipInputStream.getNextEntry();
-            zipEntry = zipInputStream.getNextEntry();
-            System.out.println(zipEntry.getName());
-
-            byte[] storedDa = zipInputStream.readAllBytes();
-            System.out.println("Stored data");
-            System.out.println(new String(storedDa));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

@@ -36,8 +36,6 @@ public class MaxScore {
         int index = 0;
 
         while (a != 1) {
-            int b = 13;
-            int c = b + 1;
             int num = list.get(index);
             System.out.print(num);
             System.out.print("->" + a);
