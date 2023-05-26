@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class Maximum_Subsequence_Score_2542 {
