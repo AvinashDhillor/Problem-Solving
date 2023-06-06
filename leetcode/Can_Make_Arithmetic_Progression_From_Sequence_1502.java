@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Can_Make_Arithmetic_Progression_From_Sequence_1502
  */
