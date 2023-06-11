@@ -31,4 +31,8 @@ public class Time_Needed_to_Inform_All_Employees_1376 {
             cal(arr, i, informTime, time + informTime[headID]);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("Test");
+    }
 }
